@@ -1,0 +1,62 @@
+.formularioRegistro {
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .formularioRegistro h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-group input {
+    margin-bottom: 15px;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .table {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .table thead th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .btn-success {
+    margin-right: 10px;
+  }
+  
+  .btn-danger {
+    margin-left: 10px;
+  }
+  
+  button[type="submit"]:disabled {
+    background-color: #cccccc;
+    border-color: #cccccc;
+  }
+  

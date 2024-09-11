@@ -1,0 +1,100 @@
+<div class="formularioRegistro">
+    <h2>Crear reservas</h2>
+    <form [formGroup]="personaForm" (ngSubmit)="guardar()">
+
+        <div class="form-group">
+            <label> fecha reserva</label>
+            <input type="date" formControlName="fecha_reserva" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label> fecha servicio</label>
+            <input type="date" formControlName="fecha_servicio" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label> hora servicio</label>
+            <input type="datetime" formControlName="hora_servicio" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label> estado</label>
+            <input type="text" formControlName="estado" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label> monto total</label>
+            <input type="number" formControlName="monto_total" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label> notas</label>
+            <input type="text" formControlName="notas" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label> cliente</label>
+            <select name="cliente" id="cliente" formControlName="cliente" class="form-control">
+                <option [ngValue]="item" *ngFor="let item of cliente">{{item.nombre}}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label> servicio</label>
+            <select name="servicio" id="servicio" formControlName="servicio" class="form-control">
+                <option [ngValue]="item" *ngFor="let item of servicio">{{item.descripcion}}
+                </option>
+            </select>
+        </div>
+
+        <div>
+            <h1></h1>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="personaForm.invalid">Guardar</button>
+
+    </form>
+</div>
+<div class="formularioRegistro">
+    <h2>reserva registradas</h2>
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>fecha_reserva</th>
+                <th>fecha_servicio</th>
+                <th>hora_servicio</th>
+                <th>estado</th>
+                <th>monto_total</th>
+                <th>notas</th>
+                <th>cliente</th>
+                <th>servicio</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of reserva">
+                <td>{{item.id}}</td>
+                <td>{{item.fecha_reserva}}</td>
+                <td>{{item.fecha_servicio}}</td>
+                <td>{{item.hora_servicio}}</td>
+                <td>{{item.estado}}</td>
+                <td>{{item.monto_total}}</td>
+                <td>{{item.notas}}</td>
+                <td>{{item.cliente.nombre}}</td>
+                <td>{{item.servicio.precio}}</td>
+                <td>
+                    <button type="button" class="btn btn-success" (click)="editar(item)">Editar</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
